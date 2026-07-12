@@ -1,10 +1,12 @@
 name: CI/CD Pipeline
 
+permissions:
+  contents: write
 on:
   push:
     branches: [main]
   pull_request:
-    branches: [develop, main]
+    branches: [develop]
 
 jobs:
   test:
@@ -61,5 +63,5 @@ jobs:
             git commit -m "Add build status badge to README [skip ci]"
             git push origin develop
           else
-            echo "Badge already exists in README.md"
+            echo "Badge already exists"
           fi
