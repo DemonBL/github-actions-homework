@@ -26,6 +26,7 @@ jobs:
 
       - name: Run tests with coverage
         run: |
+          pip install -e .
           pytest --cov=myapp --cov-report=xml --cov-fail-under=70
 
       - name: Upload coverage report
